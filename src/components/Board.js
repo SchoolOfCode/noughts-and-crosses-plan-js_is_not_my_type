@@ -23,10 +23,10 @@ const Board = () => {
     newSquare[e.target.value] = playerTurnToggle ? "X" : "O";
     setSquare(newSquare);
     setPlayerTurnToggle(!playerTurnToggle);
-    console.log(`click value: ${e.target.value} and square: ${square}`);
+    // console.log(`click value: ${e.target.value} and square: ${square}`);
   };
-  console.log(playerTurnToggle);
-  console.log(square);
+  //   console.log(playerTurnToggle);
+  //   console.log(square);
   return (
     <div>
       <div style={{ display: "flex" }}>
@@ -111,14 +111,19 @@ const Board = () => {
 };
 
 export default Board;
-comboArr[0].every((n) => n === "X");
-/*
-[012]
-345
-678
-036
-247
-258
-048
-246
-*/
+
+const comboArr = [
+  [0, 1, 2],
+  [3, 4, 5],
+  [6, 7, 8],
+  [0, 3, 6],
+  [2, 4, 7],
+  [2, 5, 8],
+  [0, 4, 8],
+  [2, 4, 6],
+];
+const sq = ["0", "1", "O", "O", "X", "O", "X", "7", "O"];
+
+for (let i = 0; i < comboArr.length; i++) {
+  console.log(comboArr[i].every((n) => sq[n] === "X"));
+}
