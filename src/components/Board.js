@@ -14,38 +14,111 @@ const initialSquaresState = [
 ];
 const Board = () => {
   const [square, setSquare] = useState(initialSquaresState);
+  const [playerTurnToggle, setPlayerTurnToggle] = useState(true);
+  //if its true then X
+  //if false then O
 
   const handleClick = (e) => {
     let newSquare = [...square];
-    newSquare[e.target.value] = "player";
+    newSquare[e.target.value] = playerTurnToggle ? "X" : "O";
     setSquare(newSquare);
+    setPlayerTurnToggle(!playerTurnToggle);
     console.log(`click value: ${e.target.value} and square: ${square}`);
   };
+  console.log(playerTurnToggle);
   console.log(square);
   return (
     <div>
       <div style={{ display: "flex" }}>
-        <Square squareState={square} handleClick={handleClick} value={0} />
-        | <Square
+        <Square
+          squareState={square}
+          handleClick={handleClick}
+          value={0}
+          disabled={square[0] !== null ? true : false}
+          player={square[0]}
+        />
+        |{" "}
+        <Square
           squareState={square}
           handleClick={handleClick}
           value={1}
-        /> | <Square squareState={square} handleClick={handleClick} value={2} />{" "}
+          disabled={square[1] !== null ? true : false}
+          player={square[1]}
+        />{" "}
+        |{" "}
+        <Square
+          squareState={square}
+          handleClick={handleClick}
+          value={2}
+          disabled={square[2] !== null ? true : false}
+          player={square[2]}
+        />{" "}
       </div>
       <br />
       <div style={{ display: "flex" }}>
-        <Square squareState={square} handleClick={handleClick} value={3} />|{" "}
-        <Square squareState={square} handleClick={handleClick} value={4} />|{" "}
-        <Square squareState={square} handleClick={handleClick} value={5} />
+        <Square
+          squareState={square}
+          handleClick={handleClick}
+          value={3}
+          disabled={square[3] !== null ? true : false}
+          player={square[3]}
+        />
+        |{" "}
+        <Square
+          squareState={square}
+          handleClick={handleClick}
+          value={4}
+          disabled={square[4] !== null ? true : false}
+          player={square[4]}
+        />
+        |{" "}
+        <Square
+          squareState={square}
+          handleClick={handleClick}
+          value={5}
+          disabled={square[5] !== null ? true : false}
+          player={square[5]}
+        />
       </div>
       <br />
       <div style={{ display: "flex" }}>
-        <Square squareState={square} handleClick={handleClick} value={6} /> |{" "}
-        <Square squareState={square} handleClick={handleClick} value={7} />|{" "}
-        <Square squareState={square} handleClick={handleClick} value={8} />
+        <Square
+          squareState={square}
+          handleClick={handleClick}
+          value={6}
+          disabled={square[6] !== null ? true : false}
+          player={square[6]}
+        />{" "}
+        |{" "}
+        <Square
+          squareState={square}
+          handleClick={handleClick}
+          value={7}
+          disabled={square[7] !== null ? true : false}
+          player={square[7]}
+        />
+        |{" "}
+        <Square
+          squareState={square}
+          handleClick={handleClick}
+          value={8}
+          disabled={square[8] !== null ? true : false}
+          player={square[8]}
+        />
       </div>
     </div>
   );
 };
 
 export default Board;
+comboArr[0].every((n) => n === "X");
+/*
+[012]
+345
+678
+036
+247
+258
+048
+246
+*/
