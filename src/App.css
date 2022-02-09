@@ -1,38 +1,69 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 10px;
+  font-family: "VT323", monospace;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+body {
   min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+
+.squareContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 5rem 5rem;
+  border: 2px solid magenta;
+  background-color: lime;
+  padding: 2rem;
+}
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  border: 2px solid magenta;
+  width: 100%;
+}
+.squareButton {
+  background-color: transparent;
+  width: 10rem;
+  height: 10rem;
+  font-size: 8rem;
+  color: rgb(45, 48, 71);
+}
+.squareButton:disabled:hover {
+  background-color: transparent;
+}
+.squareButton:hover {
+  background-color: magenta;
+}
+.winnerWinner {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  background-color: black;
+  color: lime;
+  font-size: 10rem;
 }
-
-.App-link {
-  color: #61dafb;
+.resetButton {
+  background-color: lime;
+  color: black;
+  width: 8rem;
+  height: 6rem;
+  font-size: 1.5rem;
+  padding: 0.5rem;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.resetButton:hover {
+  background-color: black;
+  color: lime;
+}
+.nudgeMe {
+  margin: auto;
 }
