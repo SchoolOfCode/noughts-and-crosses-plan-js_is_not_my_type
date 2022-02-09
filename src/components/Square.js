@@ -1,9 +1,11 @@
 import React from "react";
 
-const Square = ({ squareState, handleClick }) => {
+const Square = ({ squareState, handleClick, value }) => {
   return (
     <div>
-      <button onClick={handleClick}>X</button>
+      <button onClick={handleClick} value={value}>
+        X
+      </button>
     </div>
   );
 };
